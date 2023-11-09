@@ -1,0 +1,1 @@
+# curryful-bachelor-thesis
