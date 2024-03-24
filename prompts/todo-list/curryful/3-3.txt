@@ -1,0 +1,31 @@
+I have provide you with:
+- The curryful-commons library, which curryful-rest builds upon
+- The curryful-rest library, which is a simple rest framework,
+  leaving out the utility classes Http and Uri, you don't need
+  to know about those
+- An example application using curryful-rest
+
+The framework utilizes the concepts of functional programming,
+so use functional programming principles you know about as wel as
+the principles already applied in the example code.
+
+I want you to write a simple rest api for a todo list.
+The todo list should be stored in memory and should be accessible
+through the following endpoints:
+
+- GET /todos
+- POST /todos
+- GET /todos/:id
+- PUT /todos/:id
+- DELETE /todos/:id
+- POST /todos/:id/toggle
+
+A todo is described by the following json object:
+{
+  "id": 1,
+  "title": "Buy milk",
+  "completed": false
+}
+
+As you can see, the framework does not handle json on its own. Please
+use jackson to parse json to objects and objects to json.
