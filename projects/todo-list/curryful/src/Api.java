@@ -44,16 +44,16 @@ final RestFunction postTodo = context -> context.getBody().flatMap(body -> deser
             return HttpResponse.of(CREATED, serialize(todo), APPLICATION_JSON);
         }).orElse(HttpResponse.of(BAD_REQUEST));
 
-final RestFunction deleteTodoById = context ->
-        findTodoById(context.getPathParameters().get("id").map(Integer::parseInt))
+final RestFunction deleteTodoById = context -> findTodoById(
+		context.getPathParameters().get("id").map(Integer::parseInt))
         .map(todo -> {
             todos.remove(todo);
             return HttpResponse.of(NO_CONTENT);
         })
         .orElse(HttpResponse.of(NOT_FOUND));
 
-final RestFunction postToggleTodoById = context ->
-        findTodoById(context.getPathParameters().get("id").map(Integer::parseInt))
+final RestFunction postToggleTodoById = context -> findTodoById(
+        context.getPathParameters().get("id").map(Integer::parseInt))
         .map(todo -> {
             todo.setCompleted(!todo.isCompleted());
             return HttpResponse.of(OK, serialize(todo), APPLICATION_JSON);
@@ -105,7 +105,7 @@ void main() {
     }
 }
 
-public class Todo {
+public static class Todo {
     private int id;
     private String title;
     private boolean completed;
