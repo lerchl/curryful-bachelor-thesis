@@ -614,7 +614,7 @@ public final class Server {
 		try {
 			var line = Maybe.ofNullable(bufferedReader.readLine());
 
-			if (!line.hasValue() || line.getValue().isEmpty()) {
+			if (!line.hasValue() || (line.getValue().isEmpty() && !bufferedReader.ready())) {
 				return Try.success(http);
 			}
 
