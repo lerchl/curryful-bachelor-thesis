@@ -37,15 +37,12 @@ final RestFunction putTodoById = context -> findTodoById(context.getPathParamete
         .map(todo -> HttpResponse.of(OK, serialize(todo), APPLICATION_JSON))
         .orElse(HttpResponse.of(NOT_FOUND));
 
-final RestFunction postTodo = context -> {
-	System.out.println(context.getBody().getValue());
-	return context.getBody().flatMap(body -> deserialize(body, Todo.class))
+final RestFunction postTodo = context -> context.getBody().flatMap(body -> deserialize(body, Todo.class))
         .map(todo -> {
             todo.setId(idGenerator.incrementAndGet());
             todos.add(todo);
             return HttpResponse.of(CREATED, serialize(todo), APPLICATION_JSON);
         }).orElse(HttpResponse.of(BAD_REQUEST));
-	};
 
 final RestFunction deleteTodoById = context -> findTodoById(
 		context.getPathParameters().get("id").map(Integer::parseInt))
