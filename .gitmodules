@@ -1,0 +1,8 @@
+[submodule "curryful-bachelor-thesis-curryful-todo-list"]
+	path = curryful-bachelor-thesis-curryful-todo-list
+	url = git@github.com:lerchl/curryful-bachelor-thesis-curryful-todo-list.git
+	branch = main
+[submodule "curryful-bachelor-thesis-spring-boot-todo-list"]
+	path = curryful-bachelor-thesis-spring-boot-todo-list
+	url = git@github.com:lerchl/curryful-bachelor-thesis-spring-boot-todo-list.git
+	branch = main
