@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
+\contentsline {section}{\numberline {2}Literature review}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}REST}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Functional programming}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}General}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Web development}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}In Java}{8}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Spring Boot}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Research questions and hypotheses}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Research questions}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Hypotheses}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Methodology}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Provoking unwanted behavior using invalid requests}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Static code analysis}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Results}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Provoking unwanted behavior using invalid requests}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Static code analysis}{10}{subsection.5.2}%
