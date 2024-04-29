@@ -45,4 +45,15 @@ P.~Webb, D.~Syer, J.~Long, S.~Nicoll, R.~Winch, A.~Wilkinson, M.~Overdijk,
   C.~Dupuis, and S.~Deleuze, ``Spring boot reference guide,'' {\em Part IV.
   Spring Boot features}, vol.~24, 2013.
 
+\bibitem{hott2024java}
+J.~R. Hott, ``Is java pass-by-value?.''
+  \url{https://www.cs.virginia.edu/~jh2jf/courses/cs2110/java-pass-by-value.html}.
+\newblock Accessed: 2024-04-29.
+
+\bibitem{tschantz2005javari}
+M.~S. Tschantz and M.~D. Ernst, ``Javari: Adding reference immutability to
+  java,'' in {\em Proceedings of the 20th annual ACM SIGPLAN conference on
+  Object-oriented programming, systems, languages, and applications},
+  pp.~211--230, 2005.
+
 \end{thebibliography}

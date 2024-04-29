@@ -49,18 +49,23 @@ Technikum Wien as amended).\newline
 it to another examination board in the same or similar form. I affirm that the version submitted
 matches the version in the upload tool.“
 
-\newpage
 
+\newpage
 \section*{Kurzfassung}
 \blindtext
+\newline
+
+\noindent Keywords: REST, Java, Funktionale Programmierung, Spring Boot
+
 
 \newpage
-
 \section*{Abstract}
 \blindtext
+\newline
+
+\noindent Keywords: REST, Java, functional programming, Spring Boot
 
 \newpage
-
 \section*{Acknowledgements}
 \blindtext
 
@@ -83,7 +88,7 @@ oriented languages like Java and C\# \cite{klint2022functional}.\newline
 \noindent Combining functional programming with web development using more
 widely used languages e.g. Java is a scarcely researched topic which this thesis
 aims to explore and shine some light on. The goal is to build a REST framework
-in Java 21 using functional paradigms and compare it to Spring Boot in terms of
+using functional paradigms and compare it to Spring Boot in terms of
 performance, developer guidance and ease of use.
 
 \section{Literature review}
@@ -157,6 +162,8 @@ are only evaluated when a terminal operation, such as collecting, counting or
 averaging is called, implementing the - before mentioned - functional
 programming principle of lazy evaluation. \cite{warburton2014java}
 
+TODO Optional
+
 \subsection{Spring Boot}
 
 Spring Boot is a framework for building stand-alone web applications and RESTful
@@ -167,7 +174,44 @@ classic route of deploying a war file onto an external web server.
 
 \section{Curryful}
 Curryful tries to combine Java's simplicity with functional paradigms to build
-greater REST APIs.
+better performant and unwanted behavior diminishing REST APIs, whilst offering
+a great developer experience through easy use. As of now, when developing a REST
+API using Curryful, one will require two dependencies: curryful-commons and
+curryful-rest. Having a dependency just for common functional programming tools
+in Java allows for building any kind of application using functional paradigms
+or enriching existing REST frameworks with functional utilities. Curryful is
+hosted under a GitHub organization and can be found at
+\url{https://github.com/Curryful}.
+
+\subsection{curryful-commons}
+curryful-commons offers a basis to writing functional Java code. It provides a
+common abstract class for Monads and implementations for the Maybe and Try
+monads. Since Java contains the before mentioned monadic Optional class, which
+shares striking resemblance to the Maybe monad, the Maybe monad offers a
+function to create a Maybe from an Optional. The Try monad allows for elegantly
+handing exceptions in a functional way instead of throwing and catching them.
+
+Though Java is always pass-by-value, anything but primitive types essentially
+behave like pass-by-reference as object's references are passed by value.
+\cite{hott2024java} This allows for objects to be mutated, without the caller
+knowing, causing unwanted behavior and it also goes against the functional
+principle of purity. To avoid this, curryful-commons offers mutable and
+immutable variants of Java's \verb|ArrayList| and \verb|HashMap| where the
+mutable collections inherit from the immutable ones. This way, the mutable ones
+can be passed in place of their immutable counterparts, making it impossible for
+the called function to mutate the parameters. This concept of "immutability
+downcasts" is also referenced in "Javari: Adding Reference Immutability to Java"
+\cite{tschantz2005javari} by Matthew S. Tschantz and Michael D. Ernst from the
+University of Cambridge.
+
+TODO: Code Example oder Diagram für (Im-)mutable ArrayList und/oder HashMap
+
+Additionally, curryful-commons provides a higher order function Y-combinator to
+allow for recursion when using lambda expressions. This is necessary because
+Java does not allow referencing a lambda expression before it has been fully
+defined, e.g. from within itself.
+
+\subsection{Curryful-rest}
 
 \section{Research questions and hypotheses}
 \subsection{Research questions}
