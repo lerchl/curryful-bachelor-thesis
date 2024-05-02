@@ -7,21 +7,33 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{In Java}{subsection.2.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{Spring Boot}{section.2}% 8
 \BOOKMARK [1][-]{section.3}{Curryful}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{curryful-commons}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Curryful-commons}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.2}{Curryful-rest}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{Research questions and hypotheses}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Research questions}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Hypotheses}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.3}{Hypotheses}{section.4}% 15
-\BOOKMARK [1][-]{section.5}{Methodology}{}% 16
-\BOOKMARK [2][-]{subsection.5.1}{Performance}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.2}{Provoking unwanted behavior using invalid requests}{section.5}% 18
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Todo list}{subsection.5.2}% 19
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Yahtzee}{subsection.5.2}% 20
-\BOOKMARK [2][-]{subsection.5.3}{Static code analysis}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Results}{}% 22
-\BOOKMARK [2][-]{subsection.6.1}{Provoking unwanted behavior using invalid requests}{section.6}% 23
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Todo list}{subsection.6.1}% 24
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Yahtzee}{subsection.6.1}% 25
-\BOOKMARK [2][-]{subsection.6.2}{Static code analysis}{section.6}% 26
-\BOOKMARK [1][-]{section.7}{Discussion}{}% 27
+\BOOKMARK [3][-]{subsubsection.3.2.1}{HTTP}{subsection.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Routing}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Middleware}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.5}{Server}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Research questions and hypotheses}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Research questions}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Hypotheses}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Hypotheses}{section.4}% 19
+\BOOKMARK [1][-]{section.5}{Methodology}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Performance}{section.5}% 21
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Response time}{subsection.5.1}% 22
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Cold start}{subsection.5.1}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Provoking unwanted behavior using invalid requests}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Todo list}{subsection.5.2}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Yahtzee}{subsection.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.3}{Static code analysis}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{Results}{}% 28
+\BOOKMARK [2][-]{subsection.6.1}{Performance}{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Response time}{subsection.6.1}% 30
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Cold start}{subsection.6.1}% 31
+\BOOKMARK [2][-]{subsection.6.2}{Provoking unwanted behavior using invalid requests}{section.6}% 32
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Todo list}{subsection.6.2}% 33
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Yahtzee}{subsection.6.2}% 34
+\BOOKMARK [2][-]{subsection.6.3}{Static code analysis}{section.6}% 35
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 36
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 37
+\BOOKMARK [1][-]{section.9}{Future work}{}% 38
+\BOOKMARK [1][-]{section.10}{Self-review}{}% 39
