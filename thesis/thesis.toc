@@ -37,3 +37,7 @@
 \contentsline {section}{\numberline {8}Conclusion}{14}{section.8}%
 \contentsline {section}{\numberline {9}Future work}{14}{section.9}%
 \contentsline {section}{\numberline {10}Self-review}{14}{section.10}%
+\contentsline {section}{\numberline {A}Prompts}{19}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Todo list}{19}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}Curryful}{19}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.2}Spring Boot}{19}{subsubsection.A.1.2}%

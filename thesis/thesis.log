@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.4.5)  2 MAY 2024 20:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.4.5)  4 MAY 2024 11:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -618,7 +618,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 45.
 LaTeX Info: Redefining \pageref on input line 45.
 LaTeX Info: Redefining \nameref on input line 45.
- (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.out) (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
@@ -672,24 +671,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[4] [5] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+[4] [5]
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
  [6]
+
+LaTeX Warning: Citation `damir2021architecture' on page 7 undefined on input line 105.
+
+
+LaTeX Warning: Citation `klint2022functional' on page 7 undefined on input line 109.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 103--110
 
  []
 
 
+LaTeX Warning: Citation `halili2018web' on page 7 undefined on input line 122.
+
+
+LaTeX Warning: Citation `fielding2000architectural' on page 7 undefined on input line 124.
+
+
+LaTeX Warning: Citation `turing1937computability' on page 7 undefined on input line 143.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 139--144
 
  []
+
+
+LaTeX Warning: Citation `hughes1989functional' on page 7 undefined on input line 146.
+
+
+LaTeX Warning: Citation `wadler1992essence' on page 7 undefined on input line 161.
+
+
+LaTeX Warning: Citation `snoyman2015developing' on page 7 undefined on input line 169.
 
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 179.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -699,27 +718,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--181
 
  []
 
-[7] [8] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[7]
+
+LaTeX Warning: Citation `warburton2014java' on page 8 undefined on input line 186.
+
+
+LaTeX Warning: Citation `webb2013spring' on page 8 undefined on input line 197.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 208.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 208.
+
+LaTeX Warning: Citation `hott2024java' on page 8 undefined on input line 220.
+
+
+LaTeX Warning: Citation `tschantz2005javari' on page 8 undefined on input line 228.
+
+[8] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 258.
+
+
+LaTeX Warning: Reference `figure:http-context-classes' on page 9 undefined on input line 273.
+
+
+LaTeX Warning: Reference `figure:http-response-classes' on page 9 undefined on input line 273.
+
 
 Overfull \hbox (38.24796pt too wide) in paragraph at lines 303--304
  [] 
  []
 
-[9] [10]
+[9]
+
+LaTeX Warning: Reference `figure:routing-classes' on page 10 undefined on input line 353.
+
+[10]
 Overfull \hbox (4.53339pt too wide) in paragraph at lines 420--422
 []\T1/cmr/m/n/10 Will the de-vel-oper ex-pe-ri-ence ben-e-fit from de-vel-op-ing a REST API us-ing func-tional paradigms
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 489--493
+Underfull \hbox (badness 10000) in paragraph at lines 487--491
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 511--517
+Underfull \hbox (badness 10000) in paragraph at lines 509--515
 
  []
 
@@ -727,19 +774,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 511--517
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--569
+Underfull \hbox (badness 10000) in paragraph at lines 564--567
 
  []
 
-[13] [14] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lof)
+[13] [14]
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [15] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lol)
+ [15]
+
+Package hyperref Warning: old lol file detected, not used; run LaTeX again.
+
 \tf@lol=\write7
 \openout7 = `thesis.lol'.
 
- [16] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lot)
+[16]
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
@@ -754,20 +804,93 @@ Underfull \hbox (badness 3482) in paragraph at lines 4--8
  []
 
 ) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
+Runaway argument?
+{ I have provide you with: - The curryful-commons library, which curr\ETC.
+/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.tex:635: Paragraph ended before \text@command was complete.
+<to be read again> 
+                   \par 
+l.635 }
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (32.57816pt too wide) in paragraph at lines 635--635
+\T1/cmtt/m/n/10 library, which curryful-rest builds upon - The curryful-rest library, which is a simple
+ []
+
+
+Overfull \hbox (16.832pt too wide) in paragraph at lines 635--635
+\T1/cmtt/m/n/10 rest framework, leaving out the utility classes Http and Uri, you don't need to know
+ []
+
+
+Overfull \hbox (10.83713pt too wide) in paragraph at lines 635--635
+[]\T1/cmtt/m/n/10 The framework utilizes the concepts of functional programming, so use functional
+ []
+
+
+Overfull \hbox (6.33456pt too wide) in paragraph at lines 635--635
+\T1/cmtt/m/n/10 programming principles you know about as well as the principles already applied in
+ []
+
+
+Overfull \hbox (5.58841pt too wide) in paragraph at lines 635--635
+[]\T1/cmtt/m/n/10 I want you to write a simple rest api for a todo list. The todo list should be
+ []
+
+
+Overfull \hbox (10.83713pt too wide) in paragraph at lines 635--635
+[]\T1/cmtt/m/n/10 - GET /todos - POST /todos - GET /todos/:id - PUT /todos/:id - DELETE /todos/:id
+ []
+
+
+Overfull \hbox (31.832pt too wide) in paragraph at lines 635--635
+[]\T1/cmtt/m/n/10 A todo is described by the following json object:  "id": 1, "title": "Buy milk",
+ []
+
+/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.tex:635: Too many }'s.
+<recently read> \egroup 
+                        
+l.635 }
+       
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+Overfull \hbox (21.33456pt too wide) in paragraph at lines 635--636
+[]\T1/cmtt/m/n/10 As you can see, the framework does not handle json on its own. Please use Jackson
+ []
+
+[19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 639.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 639.
  (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 599.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 599.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9D53D847F5723D3191F4DA6CAD3CBCE9;2452.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 599.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 639.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 639.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  32B4C5A00CE98698B9CFF75D2B7C3047;2695.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 639.
  ) 
 Here is how much of TeX's memory you used:
- 29727 strings out of 481239
- 714987 string characters out of 5920378
- 1250142 words of memory out of 5000000
- 44379 multiletter control sequences out of 15000+600000
+ 29680 strings out of 481239
+ 713675 string characters out of 5920378
+ 1249342 words of memory out of 5000000
+ 44339 multiletter control sequences out of 15000+600000
  542563 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,10n,98p,776b,1168s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -782,10 +905,10 @@ pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-s
 pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-curryful-todo-list} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on /home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.pdf (18 pages, 254369 bytes).
+Output written on /home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.pdf (19 pages, 251748 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 325 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
