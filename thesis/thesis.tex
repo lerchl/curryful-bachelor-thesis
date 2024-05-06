@@ -11,8 +11,10 @@
 \usepackage{pgfplots}
 \usepackage{pgf-umlcd}
 \usepackage{tikz}
-\usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{sourcecodepro}
+\usepackage[T1]{fontenc}
+\lstset{basicstyle=\ttfamily}
 \pgfplotsset{width=10cm,compat=1.9}
 \graphicspath{ {./images/} }
 \bibliographystyle{ieeetr}
@@ -255,7 +257,7 @@ has been fully defined, e.g. from within itself.
 
 \begin{center}
 	\begin{lstlisting}[language=Java, caption=Example of using the Y-combinator,
-			captionpos=b, ]
+			captionpos=b]
 		Y(readHttp).apply(ImmutableArrayList.empty());
 	\end{lstlisting}
 \end{center}
@@ -526,10 +528,14 @@ comparison, all projects were formatted according to the same rules:
 \subsubsection{Response time}
 
 \subsubsection{Cold start}
-The scripts were run on a laptop, AMD Ryzen 5 5600U, 8.0GiB memory running Ubuntu 23.10 and on a desktop computer,
-Intel Core i9 9990k, 32GiB memory running Ubuntu 20 through WSL2.
+The scripts were run on a laptop, AMD Ryzen 5 5600U, 8GiB memory running Ubuntu 23.10 and on a desktop computer,
+Intel Core i9 9990k, 32GiB memory running Ubuntu 20.04 through WSL2.
 
-Curryful Laptop: 239.74ms
+Curryful Laptop: 238.14ms
+Curryful Desktop: 199.50ms
+
+Spring Boot Laptop: 1.91s
+Spring Boot Desktop: 1.34s
 
 \subsection{Provoking unwanted behavior using invalid requests}
 \subsubsection{Todo list}
@@ -557,11 +563,13 @@ Curryful Laptop: 239.74ms
 seven out of nine times. The two times it did not respond with the expected
 status code, the application crashed and did not respond at all. This is an
 oversight by ChatGTP which tried parsing the id path parameter to an integer,
-without checking if it is actually an integer:
+without checking if it is actually an integer. The generated code is shown by
+\ref{lst:curryful-parse-error}
 
-\begin{verbatim}
-	context.getPathParameters().get("id").map(Integer::parseInt)
-\end{verbatim}
+\begin{lstlisting}[language=Java, caption=ChatGPT generated code parsing to int
+		without precaution, captionpos=b, label=lst:curryful-parse-error]
+context.getPathParameters().get("id").map(Integer::parseInt)
+\end{lstlisting}
 
 \noindent More than just an oversight by ChatGPT, this is a massive error in the
 Curryful framework itself.
@@ -659,6 +667,7 @@ I want you to write a simple rest api for a todo list using spring boot.
 
 \section{Cold startup time measuring script}
 \subsection{Curryful}
+\begin{lstlisting}
 #!/bin/bash
 
 # Define the location of the Maven wrapper and the jar file
@@ -679,32 +688,32 @@ declare -a startTimes
 # Loop to start the application 100 times
 for i in {1..100}
 do
-    echo "Iteration $i"
+	echo "Iteration $i"
 
-    # Start the application in the background and redirect output to log file
-    java -jar $JAR_FILE > $LOG_FILE 2>&1 &
-    PID=$!
+	# Start the application in the background and redirect output to log file
+	java -jar $JAR_FILE > $LOG_FILE 2>&1 &
+	PID=$!
 
-    # Wait for a few seconds to let the application initialize
-    sleep 0.5
+	# Wait for a few seconds to let the application initialize
+	sleep 0.5
 
-    # Kill the application
-    kill $PID
-    wait $PID
+	# Kill the application
+	kill $PID
+	wait $PID
 
-    # Read the last line from the log file
-    lastLine=$(tail -1 $LOG_FILE)
-    REGEX="Curryful server started in (.*)ms"
+	# Read the last line from the log file
+	lastLine=$(tail -1 $LOG_FILE)
+	REGEX="Curryful server started in (.*)ms"
 
-    # Check if the line matches the expected startup message
-    if [[ $lastLine =~ $REGEX ]]; then
-        startTimes+=(${BASH_REMATCH[1]})
-    else
-        echo "Failed to extract start time in iteration $i"
-    fi
+	# Check if the line matches the expected startup message
+	if [[ $lastLine =~ $REGEX ]]; then
+		startTimes+=(${BASH_REMATCH[1]})
+	else
+		echo "Failed to extract start time in iteration $i"
+	fi
 
-    # Clear the log file to avoid confusion in the next iteration
-    > $LOG_FILE
+	# Clear the log file to avoid confusion in the next iteration
+	> $LOG_FILE
 done
 
 # Calculate the average start time
@@ -713,17 +722,19 @@ count=${#startTimes[@]}
 
 for time in "${startTimes[@]}"
 do
-    total=$(echo "$total + $time" | bc)
+	total=$(echo "$total + $time" | bc)
 done
 
 if [ $count -gt 0 ]; then
-    average=$(echo "scale=2; $total / $count" | bc)
-    echo "Average cold start time: $average ms"
+	average=$(echo "scale=2; $total / $count" | bc)
+	echo "Average cold start time: $average ms"
 else
-    echo "No valid start times recorded."
+	echo "No valid start times recorded."
 fi
+\end{lstlisting}
 
 \subsubsection{Spring Boot}
+\begin{lstlisting}
 #!/bin/bash
 
 # Define the location of the Maven wrapper and the jar file
@@ -744,32 +755,32 @@ declare -a startTimes
 # Loop to start the application 100 times
 for i in {1..100}
 do
-    echo "Iteration $i"
+	echo "Iteration $i"
 
-    # Start the application in the background and redirect output to log file
-    java -jar $JAR_FILE > $LOG_FILE 2>&1 &
-    PID=$!
+	# Start the application in the background and redirect output to log file
+	java -jar $JAR_FILE > $LOG_FILE 2>&1 &
+	PID=$!
 
-    # Wait for a few seconds to let the application initialize
-    sleep 2
+	# Wait for a few seconds to let the application initialize
+	sleep 5
 
-    # Kill the application
-    kill $PID
-    wait $PID
+	# Kill the application
+	kill $PID
+	wait $PID
 
-    # Read the last line from the log file
-    lastLine=$(tail -1 $LOG_FILE)
-    REGEX="Started Application in (.*) seconds"
+	# Read the last line from the log file
+	lastLine=$(tail -1 $LOG_FILE)
+	REGEX="Started Application in (.*) seconds"
 
-    # Check if the line matches the expected startup message
-    if [[ $lastLine =~ $REGEX ]]; then
-        startTimes+=(${BASH_REMATCH[1]})
-    else
-        echo "Failed to extract start time in iteration $i"
-    fi
+	# Check if the line matches the expected startup message
+	if [[ $lastLine =~ $REGEX ]]; then
+		startTimes+=(${BASH_REMATCH[1]})
+	else
+		echo "Failed to extract start time in iteration $i"
+	fi
 
-    # Clear the log file to avoid confusion in the next iteration
-    > $LOG_FILE
+	# Clear the log file to avoid confusion in the next iteration
+	> $LOG_FILE
 done
 
 # Calculate the average start time
@@ -778,15 +789,15 @@ count=${#startTimes[@]}
 
 for time in "${startTimes[@]}"
 do
-    total=$(echo "$total + $time" | bc)
+	total=$(echo "$total + $time" | bc)
 done
 
 if [ $count -gt 0 ]; then
-    average=$(echo "scale=2; $total / $count" | bc)
-    echo "Average cold start time: $average seconds"
+	average=$(echo "scale=2; $total / $count" | bc)
+	echo "Average cold start time: $average seconds"
 else
-    echo "No valid start times recorded."
+	echo "No valid start times recorded."
 fi
-
+\end{lstlisting}
 
 \end{document}

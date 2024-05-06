@@ -1,0 +1,59 @@
+\begin{thebibliography}{10}
+
+\bibitem{damir2021architecture}
+D.~Arh, ``Architecture of web applications (with design patterns).''
+  \url{https://www.dotnetcurry.com/patterns-practices/web-application-architecture},
+  2021.
+\newblock Accessed: 2023-12-09.
+
+\bibitem{klint2022functional}
+K.~Finley, ``Functional programming is finally going mainstream.''
+  \url{https://github.com/readme/featured/functional-programming}, 2022.
+\newblock Accessed: 2023-12-04.
+
+\bibitem{halili2018web}
+F.~Halili, E.~Ramadani, {\em et~al.}, ``Web services: a comparison of soap and
+  rest services,'' {\em Modern Applied Science}, vol.~12, no.~3, p.~175, 2018.
+
+\bibitem{fielding2000architectural}
+R.~T. Fielding, {\em Architectural styles and the design of network-based
+  software architectures}.
+\newblock University of California, Irvine, 2000.
+
+\bibitem{turing1937computability}
+A.~M. Turing, ``Computability and $\lambda$-definability,'' {\em The Journal of
+  Symbolic Logic}, vol.~2, no.~4, pp.~153--163, 1937.
+
+\bibitem{hughes1989functional}
+J.~Hughes, ``Why functional programming matters,'' {\em The computer journal},
+  vol.~32, no.~2, pp.~98--107, 1989.
+
+\bibitem{wadler1992essence}
+P.~Wadler, ``The essence of functional programming,'' pp.~1--14, 1992.
+
+\bibitem{snoyman2015developing}
+M.~Snoyman, {\em Developing web apps with Haskell and Yesod: safety-driven web
+  development}.
+\newblock " O'Reilly Media, Inc.", 2015.
+
+\bibitem{warburton2014java}
+R.~Warburton, {\em Java 8 Lambdas: Pragmatic Functional Programming}.
+\newblock " O'Reilly Media, Inc.", 2014.
+
+\bibitem{webb2013spring}
+P.~Webb, D.~Syer, J.~Long, S.~Nicoll, R.~Winch, A.~Wilkinson, M.~Overdijk,
+  C.~Dupuis, and S.~Deleuze, ``Spring boot reference guide,'' {\em Part IV.
+  Spring Boot features}, vol.~24, 2013.
+
+\bibitem{hott2024java}
+J.~R. Hott, ``Is java pass-by-value?.''
+  \url{https://www.cs.virginia.edu/~jh2jf/courses/cs2110/java-pass-by-value.html}.
+\newblock Accessed: 2024-04-29.
+
+\bibitem{tschantz2005javari}
+M.~S. Tschantz and M.~D. Ernst, ``Javari: Adding reference immutability to
+  java,'' in {\em Proceedings of the 20th annual ACM SIGPLAN conference on
+  Object-oriented programming, systems, languages, and applications},
+  pp.~211--230, 2005.
+
+\end{thebibliography}

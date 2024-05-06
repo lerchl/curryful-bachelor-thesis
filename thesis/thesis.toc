@@ -1,48 +1,48 @@
-\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
-\contentsline {section}{\numberline {2}Literature review}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}REST}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Functional programming}{7}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}General}{7}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Web development}{7}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}In Java}{8}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Spring Boot}{8}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Curryful}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Curryful-commons}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Curryful-rest}{9}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}HTTP}{9}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Routing}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Middleware}{11}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Server}{11}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Research questions and hypotheses}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Research questions}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Hypotheses}{11}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Methodology}{12}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Performance}{12}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Response time}{12}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Cold start}{12}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Provoking unwanted behavior using invalid requests}{12}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Todo list}{12}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Yahtzee}{13}{subsubsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.3}Static code analysis}{13}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Results}{13}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Performance}{13}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Response time}{13}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Cold start}{13}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Provoking unwanted behavior using invalid requests}{13}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Todo list}{13}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Yahtzee}{14}{subsubsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.3}Static code analysis}{14}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Discussion}{14}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{14}{section.8}%
-\contentsline {section}{\numberline {9}Future work}{14}{section.9}%
-\contentsline {section}{\numberline {10}Self-review}{14}{section.10}%
-\contentsline {section}{\numberline {A}Prompts}{18}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Todo list}{18}{subsection.A.1}%
-\contentsline {subsubsection}{\numberline {A.1.1}Curryful}{18}{subsubsection.A.1.1}%
-\contentsline {subsubsection}{\numberline {A.1.2}Spring Boot}{18}{subsubsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.2}Yahtzee}{18}{subsection.A.2}%
-\contentsline {subsubsection}{\numberline {A.2.1}Curryful}{18}{subsubsection.A.2.1}%
-\contentsline {subsubsection}{\numberline {A.2.2}Spring Boot}{18}{subsubsection.A.2.2}%
-\contentsline {section}{\numberline {B}Cold startup time measuring script}{18}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Curryful}{18}{subsection.B.1}%
-\contentsline {subsubsection}{\numberline {B.1.1}Spring Boot}{19}{subsubsection.B.1.1}%
+\contentsline {section}{\numberline {1}Introduction}{8}{section.1}%
+\contentsline {section}{\numberline {2}Literature review}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}REST}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Functional programming}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}General}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Web development}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}In Java}{9}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Spring Boot}{9}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Curryful}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Curryful-commons}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Curryful-rest}{10}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}HTTP}{10}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Routing}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Middleware}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Server}{12}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Research questions and hypotheses}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Research questions}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Hypotheses}{13}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Methodology}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Performance}{13}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Response time}{13}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Cold start}{13}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Provoking unwanted behavior using invalid requests}{13}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Todo list}{14}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Yahtzee}{14}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Static code analysis}{14}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Results}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Performance}{14}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Response time}{14}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Cold start}{14}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Provoking unwanted behavior using invalid requests}{14}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Todo list}{14}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Yahtzee}{15}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}Static code analysis}{15}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Discussion}{15}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{15}{section.8}%
+\contentsline {section}{\numberline {9}Future work}{15}{section.9}%
+\contentsline {section}{\numberline {10}Self-review}{15}{section.10}%
+\contentsline {section}{\numberline {A}Prompts}{20}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Todo list}{20}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}Curryful}{20}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.2}Spring Boot}{20}{subsubsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.2}Yahtzee}{20}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}Curryful}{20}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2}Spring Boot}{20}{subsubsection.A.2.2}%
+\contentsline {section}{\numberline {B}Cold startup time measuring script}{20}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Curryful}{20}{subsection.B.1}%
+\contentsline {subsubsection}{\numberline {B.1.1}Spring Boot}{21}{subsubsection.B.1.1}%
