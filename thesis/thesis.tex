@@ -446,8 +446,6 @@ Boot.
 	      leading to less lines required to achieve similar results.
 \end{enumerate}
 
-\subsection{Hypotheses}
-
 \section{Methodology}
 ChatGPT 4 was prompted to generate two simple REST APIs. One for a todo list
 application and one for playing Yahtzee. Each API was generated twice, once
@@ -528,6 +526,10 @@ comparison, all projects were formatted according to the same rules:
 \subsubsection{Response time}
 
 \subsubsection{Cold start}
+The scripts were run on a laptop, AMD Ryzen 5 5600U, 8.0GiB memory running Ubuntu 23.10 and on a desktop computer,
+Intel Core i9 9990k, 32GiB memory running Ubuntu 20 through WSL2.
+
+Curryful Laptop: 239.74ms
 
 \subsection{Provoking unwanted behavior using invalid requests}
 \subsubsection{Todo list}
@@ -600,19 +602,40 @@ returned 200, making it seem like the todo actually exists.
 \section{Prompts}
 \subsection{Todo list}
 \subsubsection{Curryful}
-\texttt{
-	I have provide you with:
-    - The curryful-commons library, which curryful-rest builds upon
-    - The curryful-rest library, which is a simple rest framework,
-      leaving out the utility classes Http and Uri, you don't need
-      to know about those
-    - An example application using curryful-rest
+I have provide you with:
+- The curryful-commons library, which curryful-rest builds upon
+- The curryful-rest library, which is a simple rest framework,
+	leaving out the utility classes Http and Uri, you don't need
+	to know about those
+- An example application using curryful-rest
 
-    The framework utilizes the concepts of functional programming,
-    so use functional programming principles you know about as well as
-    the principles already applied in the example code.
+The framework utilizes the concepts of functional programming,
+so use functional programming principles you know about as well as
+the principles already applied in the example code.
 
-    I want you to write a simple rest api for a todo list.
+I want you to write a simple rest api for a todo list.
+The todo list should be stored in memory and should be accessible
+through the following endpoints:
+
+- GET /todos
+- POST /todos
+- GET /todos/:id
+- PUT /todos/:id
+- DELETE /todos/:id
+- POST /todos/:id/toggle
+
+A todo is described by the following json object:
+{
+	"id": 1,
+	"title": "Buy milk",
+	"completed": false
+}
+
+As you can see, the framework does not handle json on its own. Please
+use Jackson to parse json to objects and objects to json.
+
+\subsubsection{Spring Boot}
+I want you to write a simple rest api for a todo list using spring boot.
     The todo list should be stored in memory and should be accessible
     through the following endpoints:
 
@@ -630,10 +653,140 @@ returned 200, making it seem like the todo actually exists.
       "completed": false
     }
 
-    As you can see, the framework does not handle json on its own. Please
-    use Jackson to parse json to objects and objects to json.
-}
+\subsection{Yahtzee}
+\subsubsection{Curryful}
+\subsubsection{Spring Boot}
+
+\section{Cold startup time measuring script}
+\subsection{Curryful}
+#!/bin/bash
+
+# Define the location of the Maven wrapper and the jar file
+MVNW_PATH="./mvnw"
+JAR_FILE="target/todo-0.0.1-SNAPSHOT.jar"
+LOG_DIR="target"
+LOG_FILE="${LOG_DIR}/log.txt"
+
+# Ensure Maven wrapper is executable
+chmod +x $MVNW_PATH
+
+# Build the project
+$MVNW_PATH clean package
+
+# Array to hold all the start times
+declare -a startTimes
+
+# Loop to start the application 100 times
+for i in {1..100}
+do
+    echo "Iteration $i"
+
+    # Start the application in the background and redirect output to log file
+    java -jar $JAR_FILE > $LOG_FILE 2>&1 &
+    PID=$!
+
+    # Wait for a few seconds to let the application initialize
+    sleep 0.5
+
+    # Kill the application
+    kill $PID
+    wait $PID
+
+    # Read the last line from the log file
+    lastLine=$(tail -1 $LOG_FILE)
+    REGEX="Curryful server started in (.*)ms"
+
+    # Check if the line matches the expected startup message
+    if [[ $lastLine =~ $REGEX ]]; then
+        startTimes+=(${BASH_REMATCH[1]})
+    else
+        echo "Failed to extract start time in iteration $i"
+    fi
+
+    # Clear the log file to avoid confusion in the next iteration
+    > $LOG_FILE
+done
+
+# Calculate the average start time
+total=0
+count=${#startTimes[@]}
+
+for time in "${startTimes[@]}"
+do
+    total=$(echo "$total + $time" | bc)
+done
+
+if [ $count -gt 0 ]; then
+    average=$(echo "scale=2; $total / $count" | bc)
+    echo "Average cold start time: $average ms"
+else
+    echo "No valid start times recorded."
+fi
 
 \subsubsection{Spring Boot}
+#!/bin/bash
+
+# Define the location of the Maven wrapper and the jar file
+MVNW_PATH="./mvnw"
+JAR_FILE="target/todo-0.0.1-SNAPSHOT.jar"
+LOG_DIR="target"
+LOG_FILE="${LOG_DIR}/log.txt"
+
+# Ensure Maven wrapper is executable
+chmod +x $MVNW_PATH
+
+# Build the project
+$MVNW_PATH clean package
+
+# Array to hold all the start times
+declare -a startTimes
+
+# Loop to start the application 100 times
+for i in {1..100}
+do
+    echo "Iteration $i"
+
+    # Start the application in the background and redirect output to log file
+    java -jar $JAR_FILE > $LOG_FILE 2>&1 &
+    PID=$!
+
+    # Wait for a few seconds to let the application initialize
+    sleep 2
+
+    # Kill the application
+    kill $PID
+    wait $PID
+
+    # Read the last line from the log file
+    lastLine=$(tail -1 $LOG_FILE)
+    REGEX="Started Application in (.*) seconds"
+
+    # Check if the line matches the expected startup message
+    if [[ $lastLine =~ $REGEX ]]; then
+        startTimes+=(${BASH_REMATCH[1]})
+    else
+        echo "Failed to extract start time in iteration $i"
+    fi
+
+    # Clear the log file to avoid confusion in the next iteration
+    > $LOG_FILE
+done
+
+# Calculate the average start time
+total=0
+count=${#startTimes[@]}
+
+for time in "${startTimes[@]}"
+do
+    total=$(echo "$total + $time" | bc)
+done
+
+if [ $count -gt 0 ]; then
+    average=$(echo "scale=2; $total / $count" | bc)
+    echo "Average cold start time: $average seconds"
+else
+    echo "No valid start times recorded."
+fi
+
 
 \end{document}
