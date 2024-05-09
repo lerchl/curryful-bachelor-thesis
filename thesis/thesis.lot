@@ -1,1 +1,6 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Results of the invalid requests}}{15}{table.1}%
+\contentsline {table}{\numberline {1}{\ignorespaces Machines used to measure cold start time of the todo list applications }}{13}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Requests to provoke unwanted behavior for the todo list applications }}{13}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Requests to provoke unwanted behavior for the Yahtzee applications }}{14}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Average cold start time of the todo list applications}}{15}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Results of requests trying to provoke unwanted behavior for the todo list applications }}{16}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Results of requests trying to provoke unwanted behavior for the Yahtzee applications }}{16}{table.6}%

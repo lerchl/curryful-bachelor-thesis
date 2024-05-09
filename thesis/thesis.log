@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.4.5)  6 MAY 2024 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.4.5)  9 MAY 2024 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -692,35 +692,93 @@ File: ly1enc.dfu 2019/11/14 v1.2k UTF-8 support for inputenc
    defining Unicode char U+FB06 (decimal 64262)
 )))) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks40
+\ex@=\dimen291
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen292
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count321
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count322
+\leftroot@=\count323
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count324
+\DOTSCASE@=\count325
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box89
+\strutbox@=\box90
+\big@size=\dimen293
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count326
+\c@MaxMatrixCols=\count327
+\dotsspace@=\muskip17
+\c@parentequation=\count328
+\dspbrk@lvl=\count329
+\tag@help=\toks41
+\row@=\count330
+\column@=\count331
+\maxfields@=\count332
+\andhelp@=\toks42
+\eqnshift@=\dimen294
+\alignsep@=\dimen295
+\tagshift@=\dimen296
+\tagwidth@=\dimen297
+\totwidth@=\dimen298
+\lineht@=\dimen299
+\@envbody=\toks43
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks44
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count321
-\l__pdf_internal_box=\box89
-) (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.aux)
+\l__kernel_color_stack_int=\count333
+\l__pdf_internal_box=\box91
+) (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.aux
+
+LaTeX Warning: Label `lst:curryful-parse-error' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 47.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 48.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    ... okay on input line 48.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -757,8 +815,8 @@ LaTeX Font Info:    ... okay on input line 47.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 47.
+\AtBeginShipoutBox=\box92
+Package hyperref Info: Link coloring OFF on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -766,28 +824,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
  (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.out) (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count323
-\scratchdimen=\dimen291
-\scratchbox=\box91
-\nofMPsegments=\count324
-\nofMParguments=\count325
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count326
-\MPscratchDim=\dimen292
-\MPnumerator=\count327
-\makeMPintoPDFobject=\count328
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count335
+\scratchdimen=\dimen300
+\scratchbox=\box93
+\nofMPsegments=\count336
+\nofMParguments=\count337
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count338
+\MPscratchDim=\dimen301
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -796,110 +854,149 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.16} (current compat level: 1.9).
 
-\c@lstlisting=\count329
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 57.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 57.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 57.
+\c@lstlisting=\count341
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--72
+Underfull \hbox (badness 10000) in paragraph at lines 67--73
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.79 \newpage
+              [1]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-[4] [5] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+[3] [4] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.toc [5])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 105--112
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 106--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--146
+Underfull \hbox (badness 10000) in paragraph at lines 142--147
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+SourceCodePro-TLF on input line 181.
+LaTeX Font Info:    Trying to load font information for T1+SourceCodePro-TLF on input line 182.
 (/usr/share/texlive/texmf-dist/tex/latex/sourcecodepro/T1SourceCodePro-TLF.fd
 File: T1SourceCodePro-TLF.fd 2018/02/18 (autoinst) Font definitions for T1/SourceCodePro-TLF.
 )
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 181.
+(Font)              scaled to size 10.0pt on input line 182.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--183
+Underfull \hbox (badness 10000) in paragraph at lines 176--184
 
  []
 
-[8] [9] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[7] [8] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 260.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 261.
 
-Overfull \hbox (38.24796pt too wide) in paragraph at lines 305--306
+Overfull \hbox (38.24796pt too wide) in paragraph at lines 306--307
  [] 
  []
 
-[10] [11]
-Overfull \hbox (4.53339pt too wide) in paragraph at lines 422--424
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 400--406
+
+ []
+
+
+Overfull \hbox (4.53339pt too wide) in paragraph at lines 423--425
 []\T1/cmr/m/n/10 Will the de-vel-oper ex-pe-ri-ence ben-e-fit from de-vel-op-ing a REST API us-ing func-tional paradigms
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 487--491
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 489--494
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 509--515
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 525--527
 
+ []
+
+
+Overfull \hbox (1.45158pt too wide) in paragraph at lines 554--554
+[]|\T1/cmr/m/n/10 /todos/:id/toggle| 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--577
+Underfull \hbox (badness 10000) in paragraph at lines 582--588
 
  []
 
-[14] [15] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lof)
+[13] [14]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--707
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--716
+
+ []
+
+[15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 820--824
+
+ []
+
+LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 827.
+
+Overfull \hbox (37.94437pt too wide) in paragraph at lines 835--836
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (43.94443pt too wide) in paragraph at lines 837--838
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 856--865
+
+ []
+
+[18] [19] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [16] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lol)
+ [20] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lol)
 \tf@lol=\write7
 \openout7 = `thesis.lol'.
 
- [17] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lot)
+ [21] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.lot)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [18] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.bbl
+ [22] (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.bbl
 Underfull \hbox (badness 1577) in paragraph at lines 4--8
 []\T1/cmr/m/n/10 D. Arh, ``Ar-chi-tec-ture of web ap-pli-ca-tions (with de-sign pat-terns).'' []$\T1/SourceCodePro-TLF/m/n/10 https : / / www .
  []
@@ -914,34 +1011,43 @@ Underfull \hbox (badness 3536) in paragraph at lines 49--52
 []\T1/cmr/m/n/10 J. R. Hott, ``Is java pass-by-value?.'' []$\T1/SourceCodePro-TLF/m/n/10 https : / / www . cs . virginia . edu / ~jh2jf /
  []
 
-) [19] [20]
-Overfull \hbox (61.94461pt too wide) in paragraph at lines 693--694
+) [23]
+Overfull \hbox (7.94406pt too wide) in paragraph at lines 928--929
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[24]
+Overfull \hbox (61.94461pt too wide) in paragraph at lines 976--977
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[21]
-Overfull \hbox (61.94461pt too wide) in paragraph at lines 760--761
+[25]
+Overfull \hbox (61.94461pt too wide) in paragraph at lines 1043--1044
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 803.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 803.
+[26] [27]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1086.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1086.
  (/home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 803.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 803.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1086.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1086.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C9E573513FD4D80FE27C418F622A375E;3033.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 803.
+(rerunfilecheck)             Checksum: ABD059A7D6E839673B593AB3B2229803;3586.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1086.
  ) 
 Here is how much of TeX's memory you used:
- 30544 strings out of 481239
- 727983 string characters out of 5920378
- 1277093 words of memory out of 5000000
- 45022 multiletter control sequences out of 15000+600000
- 542864 words of font info for 45 fonts, out of 8000000 for 9000
+ 31847 strings out of 481239
+ 751011 string characters out of 5920378
+ 1289468 words of memory out of 5000000
+ 46213 multiletter control sequences out of 15000+600000
+ 546140 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,10n,98p,776b,1750s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,19n,100p,776b,2318s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-postman-requests} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-spring-boot-yahtzee} has been referenced but does not exist, replaced by a fixed one
@@ -952,11 +1058,11 @@ pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-s
 
 pdfTeX warning (dest): name{https://github.com/lerchl/curryful-bachelor-thesis-curryful-todo-list} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on /home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.pdf (22 pages, 280136 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on /home/nico/curryful/curryful-bachelor-thesis/thesis/thesis.pdf (28 pages, 387326 bytes).
 PDF statistics:
- 657 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 240 named destinations out of 1000 (max. 500000)
- 397 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 849 PDF objects out of 1000 (max. 8388607)
+ 795 compressed objects within 8 object streams
+ 330 named destinations out of 1000 (max. 500000)
+ 453 words of extra memory for PDF output out of 10000 (max. 10000000)
 

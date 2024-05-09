@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,titlepage]{article}
 \usepackage[a4paper, top=1in, left=1.2in, right=1.2in, bottom=1in, footskip=0.25in]{geometry}
 \usepackage[absolute]{textpos}
 \usepackage{subfigure}
@@ -14,6 +14,7 @@
 \usepackage{listings}
 \usepackage{sourcecodepro}
 \usepackage[T1]{fontenc}
+\usepackage{amsmath}
 \lstset{basicstyle=\ttfamily}
 \pgfplotsset{width=10cm,compat=1.9}
 \graphicspath{ {./images/} }
@@ -39,8 +40,8 @@ minimum height=1cm, node distance=2cm]
 }
 
 \title{
-	Currying the web: A custom Java REST framework - built on functional paradigms
-	- compared to Spring Boot: Performance, Developer Guidance and Ease of Use
+	Currying the web: A Java REST framework - built on functional paradigms
+	- compared to Spring Boot: Performance, developer guidance and ease of use
 }
 \author{Nico Lerchl\\2110257236\\[0.5cm]{\small Advisor: Dipl.-Ing. (FH) Bernhard Wallisch}}
 
@@ -247,7 +248,7 @@ University of Cambridge.
 		\end{tikzpicture}
 	\end{center}
 	\caption{(Incomplete - for clarity) class diagrams of ImmutableArrayList and
-			MutableArrayList and their relationship}
+		MutableArrayList and their relationship}
 \end{figure}
 
 \noindent Additionally, curryful-commons provides a higher order function
@@ -305,7 +306,7 @@ their fields are \verb|final| and no mutating methods are provided.
 		\end{tikzpicture}
 	\end{center}
 	\caption{(Incomplete - for clarity) class diagrams of classes representing
-			HTTP requests in curryful-rest}
+		HTTP requests in curryful-rest}
 	\label{figure:http-context-classes}
 \end{figure}
 
@@ -332,11 +333,11 @@ their fields are \verb|final| and no mutating methods are provided.
 		\end{tikzpicture}
 	\end{center}
 	\caption{(Incomplete - for clarity) class diagrams of classes representing
-			HTTP responses in curryful-rest}
+		HTTP responses in curryful-rest}
 	\label{figure:http-response-classes}
 \end{figure}
 
-\subsection{Routing}
+\subsubsection{Routing}
 The \verb|Router|-Class provides one function that can be curried to register
 middleware and endpoints. The curried function can then be called for each
 connection and its raw HTTP. It is here where the \verb|HTTP|-Class' functions
@@ -377,11 +378,11 @@ endpoints, this will however be further explained - with code - later.
 		\end{tikzpicture}
 	\end{center}
 	\caption{(Incomplete - for clarity) class diagrams of classes representing
-			HTTP requests in curryful-rest}
+		HTTP requests in curryful-rest}
 	\label{figure:routing-classes}
 \end{figure}
 
-\subsection{Middleware}
+\subsubsection{Middleware}
 Middleware can be registered as \verb|PreMiddleware| or \verb|PostMiddleware|
 where the former receives the same \verb|HttpContext| as the endpoint's rest
 function and returns an \verb|HttpContext|, allowing for manipulation for
@@ -395,18 +396,18 @@ created, i.e. after finding the formal \verb|Destination| to be able to extract
 the path parameters. \verb|PostMiddleware| is executed after the endpoint's rest
 function has been called and returned an \verb|HttpResponse|.
 
-\subsection{Server}
+\subsubsection{Server}
 The \verb|Server|-Class provides the entry point to the REST application. This
 is where a Socket is opened, connections accepted and then handed off to the
 \verb|Router| to be processed. The \verb|Server| not only passes through the
 Middleware created by the developer but also registers its own Middleware in
 the form of a \verb|PreMiddleware| to log incoming requests and a
-\verb|PostMiddleware| to log outgoing responses.
+\verb|PostMiddleware| to log outgoing responses.\newline
 
-Each new connection is accepted and handled in a new thread to provide
-resilience against failure. If any errors where to occur during routing or the
+\noindent Each new connection is accepted and handled in a new thread to provide
+resilience against failure. If any errors were to occur during routing or the
 executing of developer-implemented \verb|RestFunction|s, the server will respond
-with a 500 status code but continue running to accept new connections.
+with a 500 status code but continue to accept new connections.
 
 \section{Research questions and hypotheses}
 \subsection{Research questions}
@@ -466,44 +467,116 @@ be done to the generated code are available in the projects' repositories:
 
 \subsection{Performance}
 \subsubsection{Response time}
-To measure response time, a folder or requests was sent to both applications
-with 100 iterations using Postman. From the results, the total duration and
-average response time of both applications can be compared to determine which
-application is more performant regarding response times.
+To measure response time, a folder or requests was sent to both todo list
+applications with 100 iterations using Postman. From the results, the total
+duration and average response time of both applications can be compared to
+determine which application is more performant regarding response times. The
+requests are:
+
+\begin{itemize}
+	\item GET all todos
+	\item POST a todo
+	\item GET the created todo
+	\item PUT the created todo by changing the title
+	\item POST the created todo to toggle completed
+	\item DELETE the created todo
+\end{itemize}
+
+These requests can be found, in the form of JSON Postman collection v2.1
+\hyperlink{https://github.com/lerchl/curryful-bachelor-thesis-postman-requests}{here}
 
 \subsubsection{Cold start}
-To measure cold start time, the applications were each started 100 times using
-a bash script. As both Curryful and Spring Boot log their startup time, it can
-be read by the script and the average cold start time calculated.
+To measure cold start time, the todo list applications were each started 100
+times using a bash script. As both Curryful and Spring Boot log their startup
+time, it can be read by the script using regex and the average cold start time
+calculated. The script can be found in the project repositories linked above and
+also in the appendix.\newline
+
+\noindent The scripts were run on two machines, to also get an understanding of
+how different hardware affects the cold start time, if better hardware has a
+bigger impact on the startup time on any of the two frameworks. A smaller
+difference in startup time between the two machines would mean that the
+framework does not require as much computational power to be performant.
+The following table \ref{table:cold-start-machines} describes the machines used:
+
+\begin{table}[h!]
+	\begin{tabularx}{\textwidth}{|c|c|c|X|}
+		\hline
+		Alias   & CPU                 & Memory & OS                                      \\
+		\hline
+		Laptop  & AMD Ryzen 5 5600U   & 8GiB   & Ubuntu 23.10                            \\
+		Desktop & Intel Core i9 9990K & 32GiB  & Ubuntu 20.04 through WSL2 on Windows 10 \\
+		\hline
+	\end{tabularx}
+	\caption{
+		Machines used to measure cold start time of the todo list applications
+	}
+	\label{table:cold-start-machines}
+\end{table}
+
+\noindent To calculate how much faster the application started on the desktop
+compared to the laptop, this formula was used, where $t_{Laptop}$ is the average
+Laptop and $t_{Desktop}$ the average Desktop cold start time:
+$$
+\frac{t_{Laptop} - t_{Desktop}}{t_{Laptop}} \times 100\%
+$$
 
 \subsection{Provoking unwanted behavior using invalid requests}
 The prompts were held short and only ask for necessary implementation details,
-leaving room to play with for the AI generating the code.
+leaving room to play with for the AI generating the code.\newline
 
-Using Postman, both application generated by ChatGTP were sent requests, trying
-to provoke unwanted behavior. The applications were restarted after each request
-to empty the in-memory storage, which was one of the implementation details.
-
-The requests can be found in the form of JSON, exported by Postman as a
-collection v2.1
-\hyperlink{https://github.com/lerchl/curryful-bachelor-thesis-postman-requests}{here}
-\newline
+\noindent Using Postman, both application generated by ChatGTP were sent
+requests, trying to provoke unwanted behavior. The applications were restarted
+after each request to empty the in-memory storage, which was one of the
+implementation details. These requests can also be found, in the same format,
+in the repository linked above.
 
 \subsubsection{Todo list}
-\noindent The requests are:
-\begin{itemize}
-	\item POST request where "completed" is a string
-	\item POST request where a car is added
-	\item POST request where the body is empty
-	\item GET request for id -1
-	\item PUT request for id -1
-	\item POST request to toggle completed for id -1
-	\item DELETE request for id -1
-	\item GET request for id test
-	\item GET request for id 999999999999999999999
-\end{itemize}
+The requests trying to provoke unwanted behavior for the todo list applications
+are:
+
+\begin{table}[h!]
+	\begin{tabularx}{\textwidth}{|X|X|c|c|}
+		\hline
+		HTTP-Method & URI               & Provocation                  & Expected status code \\
+		\hline
+		GET         & /unknown          & undefined endpoint           & 404                  \\
+		POST        & /todos            & "completed" is a string      & 400                  \\
+		POST        & /todos            & JSON of a car object         & 400                  \\
+		POST        & /todos            & body is empty                & 400                  \\
+		GET         & /todos/:id        & for id -1                    & 404                  \\
+		PUT         & /todos/:id        & for id -1                    & 404                  \\
+		POST        & /todos/:id/toggle & for id -1                    & 404                  \\
+		DELETE      & /todos/:id        & for id -1                    & 404                  \\
+		GET         & /todos/:id        & for id test                  & 400                  \\
+		GET         & /todos/:id        & for id 999999999999999999999 & 400                  \\
+		\hline
+	\end{tabularx}
+	\caption{
+		Requests to provoke unwanted behavior for the todo list applications
+	}
+\end{table}
 
 \subsubsection{Yahtzee}
+The requests trying to provoke unwanted behavior for the Yahtzee applications
+are:
+
+\begin{table}[h!]
+	\begin{tabularx}{\textwidth}{|X|X|c|c|}
+		\hline
+		HTTP-Method & URI      & Provocation                   	& Expected status code \\
+		\hline
+		GET         & /unknown & undefined endpoint            	& 404                  \\
+		POST        & /login   & not registered		           	& 409                  \\
+		POST        & /login   & missing credentials        	& 409                  \\
+		GET         & /yahtzee & missing Authorization header	& 403                  \\
+		GET         & /yahtzee & made-up Authorization header	& 403                  \\
+		\hline
+	\end{tabularx}
+	\caption{
+		Requests to provoke unwanted behavior for the Yahtzee applications
+	}
+\end{table}
 
 \subsection{Static code analysis}
 The generated code was analyzed using SonarCloud to determine both cyclomatic
@@ -526,16 +599,79 @@ comparison, all projects were formatted according to the same rules:
 \section{Results}
 \subsection{Performance}
 \subsubsection{Response time}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				enlarge x limits=0.50,
+				legend style={at={(0.5,-0.15)},
+						anchor=north,legend columns=-1},
+				ylabel={Response time (ms)},
+				symbolic x coords={Curryful, Spring Boot},
+				xtick=data,
+				nodes near coords,
+				nodes near coords align={vertical},
+			]
+			\addplot coordinates {(Curryful,4) (Spring Boot,3)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{
+		Average response time of the todo list applications
+	}
+\end{figure}
 
 \subsubsection{Cold start}
-The scripts were run on a laptop, AMD Ryzen 5 5600U, 8GiB memory running Ubuntu 23.10 and on a desktop computer,
-Intel Core i9 9990k, 32GiB memory running Ubuntu 20.04 through WSL2.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Alias   & Curryful & Spring Boot \\
+			\hline
+			Laptop  & 238.14ms & 1.91s       \\
+			Desktop & 199.50ms & 1.34s       \\
+			\hline
+		\end{tabular}
+		\caption{Average cold start time of the todo list applications}
+		\label{table:cold-start-results}
+	\end{center}
+\end{table}
 
-Curryful Laptop: 238.14ms
-Curryful Desktop: 199.50ms
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				enlarge x limits=0.50,
+				legend style={at={(0.5,-0.15)},
+						anchor=north,legend columns=-1},
+				ylabel={Cold start times (ms)},
+				symbolic x coords={Curryful, Spring Boot},
+				xtick=data,
+				nodes near coords,
+				nodes near coords align={vertical},
+			]
+			\addplot+[bar shift=-15pt] coordinates {(Curryful,238.14) (Spring Boot,1910)};
+			\addplot+[bar shift=15pt] coordinates {(Curryful,199.50) (Spring Boot,1340)};
+			\legend{Laptop, Desktop}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Average cold start time of the todo list applications}
+	\label{figure:cold-start-results}
+\end{figure}
 
-Spring Boot Laptop: 1.91s
-Spring Boot Desktop: 1.34s
+Using the formula mentioned under methodology to calculate how much faster the
+application started on the desktop compared to the laptop, the following results
+were obtained:
+
+\begin{align*}
+	\Delta_{\text{Curryful}} = \frac{238.14 - 199.50}{238.14} \times 100\% & = 16.23\% \\
+	\Delta_{\text{Spring Boot}} = \frac{1.91 - 1.34}{1.91} \times 100\%    & = 29.84\%
+\end{align*}
+
+\noindent These two numbers mean that the Spring Boot application started
+29.84\% faster on Desktop compared to Laptop, whereas the Curryful application
+only started 16.23\% faster on Desktop compared to Laptop.
 
 \subsection{Provoking unwanted behavior using invalid requests}
 \subsubsection{Todo list}
@@ -556,7 +692,10 @@ Spring Boot Desktop: 1.34s
 		GET request for id 999999999999999999999   & 400                  & -                                       & 400         \\
 		\hline
 	\end{tabularx}
-	\caption{Results of the invalid requests}
+	\caption{
+		Results of requests trying to provoke unwanted behavior for the todo
+		list applications
+	}
 \end{table}
 
 \noindent The project using Curryful responded with the expected status code
@@ -564,7 +703,7 @@ seven out of nine times. The two times it did not respond with the expected
 status code, the application crashed and did not respond at all. This is an
 oversight by ChatGTP which tried parsing the id path parameter to an integer,
 without checking if it is actually an integer. The generated code is shown by
-\ref{lst:curryful-parse-error}
+listing \ref{lst:curryful-parse-error}:\newline
 
 \begin{lstlisting}[language=Java, caption=ChatGPT generated code parsing to int
 		without precaution, captionpos=b, label=lst:curryful-parse-error]
@@ -581,14 +720,154 @@ title. All requests trying to access a non-existent todo with the id -1,
 returned 200, making it seem like the todo actually exists.
 
 \subsubsection{Yahtzee}
+\begin{table}[h!]
+	\begin{tabularx}{\textwidth}{|X|c|c|c|}
+		\hline
+		\textbf{Request}                           & Expected status code & \multicolumn{2}{c|}{Actual status code}               \\
+		                                           &                      & Curryful                                & Spring Boot \\
+		\hline
+		POST request where "completed" is a string & 400                  & 400                                     & 400         \\
+		POST request where a car is added          & 400                  & 400                                     & 200         \\
+		POST request where the body is empty       & 400                  & 400                                     & 400         \\
+		GET request for id -1                      & 404                  & 404                                     & 200         \\
+		PUT request for id -1                      & 404                  & 404                                     & 200         \\
+		POST request to toggle completed for id -1 & 404                  & 404                                     & 200         \\
+		DELETE request for id -1                   & 404                  & 404                                     & 200         \\
+		GET request for id test                    & 400                  & -                                       & 400         \\
+		GET request for id 999999999999999999999   & 400                  & -                                       & 400         \\
+		\hline
+	\end{tabularx}
+	\caption{
+		Results of requests trying to provoke unwanted behavior for the Yahtzee
+		applications
+	}
+\end{table}
 
 \subsection{Static code analysis}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				enlarge x limits=0.50,
+				legend style={at={(0.5,-0.15)},
+						anchor=north,legend columns=-1},
+				ylabel={Cyclomatic complexity},
+				symbolic x coords={Curryful, Spring Boot},
+				xtick=data,
+				nodes near coords,
+				nodes near coords align={vertical},
+			]
+			\addplot coordinates {(Curryful,31) (Spring Boot,22)};
+			\addplot coordinates {(Curryful,45) (Spring Boot,45)};
+			\legend{todo list, Yahtzee}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Cyclomatic complexity of the applications}
+	\label{figure:cyclomatic-complexity}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				ybar,
+				enlarge x limits=0.50,
+				legend style={at={(0.5,-0.15)},
+						anchor=north,legend columns=-1},
+				ylabel={Cognitive complexity},
+				symbolic x coords={Curryful, Spring Boot},
+				xtick=data,
+				nodes near coords,
+				nodes near coords align={vertical},
+			]
+			\addplot coordinates {(Curryful,3) (Spring Boot,1)};
+			\addplot coordinates {(Curryful,4) (Spring Boot,4)};
+			\legend{todo list, Yahtzee}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Cognitive complexity of the applications}
+	\label{figure:cognitive-complexity}
+\end{figure}
 
 \section{Discussion}
+\subsection{Performance}
+
+\subsection{Provoking unwanted behavior using invalid requests}
+
+\subsection{Static code analysis}
 
 \section{Conclusion}
 
 \section{Future work}
+Since the scope of developing Curryful was limited to this thesis there are many
+things that could be improved or added to the framework. This potential future
+work will be summarized in this section.
+
+\subsection{HTTP status code 405: Method not allowed}
+Currently, if a request is made to an endpoint with a method that is not allowed
+by the endpoint, the application will respond with a 404 status code. RFC 9110
+states: "The 405 (Method Not Allowed) status code indicates that the method
+received in the request-line is known by the origin server but not supported by
+he target resource. The origin server MUST generate an Allow header field in a
+405 response containing a list of the target resource's currently supported
+methods." \cite{fielding2022rfc}
+
+Implementing this status code, as well as caching the responses, also mentioned
+in RFC 9110, would be a great addition to the framework.
+
+\subsection{JSON (de-)serialization}
+As seen in the todo list project generated by ChatGPT, Curryful does not handle
+de- or serialization of JSON, so the prompt advised to use Jackson. Jackson was
+not implemented based on functional paradigms and therefore had ChatGPT catch
+exceptions, see listing \ref{lst:json-de-serialize}.\newline
+
+\begin{lstlisting}[language=Java, caption=ChatGPT generated code to
+		(de-)serialize JSON, captionpos=b, label=lst:json-de-serialize]
+private static String serialize(Object obj) {
+	try {
+		return objectMapper.writeValueAsString(obj);
+	} catch (Exception e) {
+		throw new RuntimeException(e);
+	}
+}
+
+private static <T> Maybe<T> deserialize(String content, Class<T> valueType) {
+	try {
+		return Maybe.just(objectMapper.readValue(content, valueType));
+	} catch (Exception e) {
+		return Maybe.none();
+	}
+}
+\end{lstlisting}
+
+\noindent This makes the programmer write more code, making the application more
+verbose and also drags the developer back into the imperative programming
+paradigms. Implementing a JSON (de-)serialization library based on functional
+paradigms would be a great addition to the framework or even Curryful ecosystem.
+
+\subsection{ORM}
+Curryful does not provide any way to interact with a database. Implementing ORM
+- or just a library to be able to connect to a database to run queries - using
+the concepts of functional programming would allow for a more complete
+framework.
+
+\subsection{Maven compilation plugin}
+"If a \{pick a functional programming language\} program compiles, it probably
+works" is a common saying in the functional programming community. To bring this
+saying to Curryful, a Maven plugin could be implemented to analyze the source
+code, similar to a linter. This plugin could check for common mistakes, e.g.
+using null values, not catching runtime exceptions or not checking if a value
+is present before trying to access it. A plugin like this would have had the
+compilation fail for the todo list project, where ChatGPT tried parsing the id
+path parameter to an integer without checking, if it is actually an integer or
+catching the exception and wrapping it in a Try.\newline
+
+\begin{lstlisting}[language=Java, caption=ChatGPT generated code that would have
+		had compilation fail using the before conceptuailzed plugin,
+		captionpos=b, label=lst:curryful-parse-error]
+context.getPathParameters().get("id").map(Integer::parseInt)
+\end{lstlisting}
 
 \section{Self-review}
 
@@ -610,6 +889,7 @@ returned 200, making it seem like the todo actually exists.
 \section{Prompts}
 \subsection{Todo list}
 \subsubsection{Curryful}
+\begin{lstlisting}
 I have provide you with:
 - The curryful-commons library, which curryful-rest builds upon
 - The curryful-rest library, which is a simple rest framework,
@@ -641,25 +921,28 @@ A todo is described by the following json object:
 
 As you can see, the framework does not handle json on its own. Please
 use Jackson to parse json to objects and objects to json.
+\end{lstlisting}
 
 \subsubsection{Spring Boot}
+\begin{lstlisting}
 I want you to write a simple rest api for a todo list using spring boot.
-    The todo list should be stored in memory and should be accessible
-    through the following endpoints:
+The todo list should be stored in memory and should be accessible
+through the following endpoints:
 
-    - GET /todos
-    - POST /todos
-    - GET /todos/:id
-    - PUT /todos/:id
-    - DELETE /todos/:id
-    - POST /todos/:id/toggle
+- GET /todos
+- POST /todos
+- GET /todos/:id
+- PUT /todos/:id
+- DELETE /todos/:id
+- POST /todos/:id/toggle
 
-    A todo is described by the following json object:
-    {
-      "id": 1,
-      "title": "Buy milk",
-      "completed": false
-    }
+A todo is described by the following json object:
+{
+	"id": 1,
+	"title": "Buy milk",
+	"completed": false
+}
+\end{lstlisting}
 
 \subsection{Yahtzee}
 \subsubsection{Curryful}

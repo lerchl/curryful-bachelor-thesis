@@ -1,4 +1,8 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces (Incomplete - for clarity) class diagrams of ImmutableArrayList and MutableArrayList and their relationship}}{10}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP requests in curryful-rest}}{11}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP responses in curryful-rest}}{11}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP requests in curryful-rest}}{12}{figure.4}%
+\contentsline {figure}{\numberline {1}{\ignorespaces (Incomplete - for clarity) class diagrams of ImmutableArrayList and MutableArrayList and their relationship}}{9}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP requests in curryful-rest}}{10}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP responses in curryful-rest}}{10}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces (Incomplete - for clarity) class diagrams of classes representing HTTP requests in curryful-rest}}{11}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Average response time of the todo list applications }}{14}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Average cold start time of the todo list applications}}{15}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Cyclomatic complexity of the applications}}{17}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Cognitive complexity of the applications}}{17}{figure.8}%
